@@ -1,10 +1,14 @@
 import pickle
 from colorifier.util import hex2rgb, hsv2rgb
+import colorifier
+import os
 
 
 class Classifier(object):
     def __init__(self):
-        with open("model.pkl", "rb") as f:
+        template_file = os.path.join(os.path.dirname(colorifier.__file__), 'model.pkl')
+        print(template_file)
+        with open(template_file, "rb") as f:
             self._model = pickle.load(f)
 
     def _transform(self, value, transform_func):

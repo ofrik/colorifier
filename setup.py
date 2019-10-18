@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='colorifier',
-    version='1.0',
+    version='1.3',
     author="Ofri Masad",
     author_email="ofrik89@gmail.com",
     description="Classifier for colors",
@@ -13,6 +13,8 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=setuptools.find_packages(),
+    package_data={'colorifier': ["colorifier/model.pkl"]},
+    include_package_data=True,
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
